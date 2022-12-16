@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ArfxC+KQ4nm8L5aLU7IcCc6TUs33woglLg6fc8QJ2ocYe5KaG4mBrrtHLafkHwk5CjUGkX8GHvu0n0tfWTswgA==",
+  "success": true,
+  "projectFilePath": "/Users/bramsteenkamp/theaterlaak/theaterlaak.csproj",
+  "expectedPackageFiles": [
+    "/Users/bramsteenkamp/.nuget/packages/microsoft.aspnetcore.spaproxy/6.0.10/microsoft.aspnetcore.spaproxy.6.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
