@@ -47,11 +47,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bramsteenkamp/theaterlaak/theaterlaak.csproj",
+      "projectUniqueName": "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj",
       "projectName": "theaterlaak",
-      "projectPath": "/Users/bramsteenkamp/theaterlaak/theaterlaak.csproj",
+      "projectPath": "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj",
       "packagesPath": "/Users/bramsteenkamp/.nuget/packages/",
-      "outputPath": "/Users/bramsteenkamp/theaterlaak/obj/",
+      "outputPath": "/Users/bramsteenkamp/wdpr/theaterlaak/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/bramsteenkamp/.nuget/NuGet/NuGet.Config"
