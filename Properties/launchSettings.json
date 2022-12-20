@@ -1,17 +1,17 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:36754",
-      "sslPort": 44325
+      "applicationUrl": "http://localhost:14670",
+      "sslPort": 44308
     }
   },
   "profiles": {
     "theaterlaak": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7201;http://localhost:5058",
+      "applicationUrl": "https://localhost:7003;http://localhost:5291",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
