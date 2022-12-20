@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj": {}
+    "C:\\Users\\User\\IdeaProjects\\theaterlaak\\theaterlaak.csproj": {}
   },
   "projects": {
-    "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj": {
+    "C:\\Users\\User\\IdeaProjects\\theaterlaak\\theaterlaak.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj",
+        "projectUniqueName": "C:\\Users\\User\\IdeaProjects\\theaterlaak\\theaterlaak.csproj",
         "projectName": "theaterlaak",
-        "projectPath": "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj",
-        "packagesPath": "/Users/bramsteenkamp/.nuget/packages/",
-        "outputPath": "/Users/bramsteenkamp/wdpr/theaterlaak/obj/",
+        "projectPath": "C:\\Users\\User\\IdeaProjects\\theaterlaak\\theaterlaak.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\IdeaProjects\\theaterlaak\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/bramsteenkamp/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -90,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
