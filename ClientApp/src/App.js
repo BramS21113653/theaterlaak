@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { useDebugValue ,Component } from 'react';
+import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { Layout } from './components/Layout';
@@ -16,6 +17,7 @@ export default class App extends Component {
             return <Route key={index} {...rest} element={element} />;
           })}
         </Routes>
+        <Footer/>
       </Layout>
     );
   }
