@@ -5,6 +5,7 @@ body {
     min-height: 100%;
     max-width: 100%;
     margin: 0 auto;
+    background-color: #F5F5F5;
 
 }
 .container{
@@ -17,72 +18,103 @@ body {
 
 
   }
-.banner{
-    min-height: 100%;
+.overons{
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap:15%;
+    
+}
+.textoverOns{
+   margin-left:17.5% ;
+  }
+ .fotoOverOns{
+    max-width: 60%;
+
+
  }
+
  .bannerfoto{
     width: 100%;
     border-width: 0;
  }
- img{
-    width: 40%;
-    display: flex;
-justify-content: center;
- }
- .overons{
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap:20%;
-}
+
+
 .programmering{
     padding-top: 2.5%;
     padding-bottom: 2.5%;
- }
-@media (max-width: 768px) {
-    html {
-      font-size: 16px;
-      background-color: blue;
-    }
-    body {
-      min-height: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      background-color: red;
-  }
-  .container{
-    padding: 0;
-    
-  }
-  .bannerfoto{
-    max-width: 100%;
-    max-height: 100%;
-    border-width: 0;
-    padding-top: 0;
-    padding-bottom: 5%;
- 
-}
-.overons{
-    padding-top: 5%;
-    padding-bottom: 5%;
     width: 100%;
-}
-.textoverons{
-    padding-left: 15%;
-    padding-right: 15%;
-}
- .fotoOverOns{
-    max-width: 100%;
-    max-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap:15%;
+ }
+ .programmeringfoto{
+  max-width: 50%;
+  margin-left:17.5% ;
+  margin-right: -20%;
 
  }
- .programmering{
-    padding-top: 5%;
-    padding-bottom: 5%;
+.programmeringtext{
+  padding-right: 26%;
+}
+button{
+
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    min-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+
+}
+.container{
+  padding: 0;
+  
+}
+.bannerfoto{
+  max-width: 100%;
+  max-height: 100%;
+  border-width: 0;
+  padding-top: 0;
+  padding-bottom: 5%;
+
+}
+.overons{
+
+  width: 100%;
+flex-direction: column ;  }
+.textoverOns{
+padding-top: 5%;
+padding-bottom: 5%;
+padding-right: 10%;
+}
+.fotoOverOns{
+  max-width: 100%;
+  max-height: 100%;
+align-items: flex-end;
+}
+.programmering{
+ flex-direction: column-reverse ; 
+ width: 100%;
+
  }
- }
+ .programmeringfoto{
+  max-width: 100%;
+  margin: 0;
+ 
+}
+.programmeringtext{
+  padding-top: 5%;
+  padding-bottom: 5%;
+padding-left: 10%;
+
+}
+}
 
   
