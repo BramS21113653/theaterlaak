@@ -2640,19 +2640,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/bramsteenkamp/.nuget/packages/": {}
+    "C:\\Users\\dgoed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj",
+      "projectUniqueName": "C:\\Users\\dgoed\\Desktop\\WDPR\\theaterlaak\\theaterlaak.csproj",
       "projectName": "theaterlaak",
-      "projectPath": "/Users/bramsteenkamp/wdpr/theaterlaak/theaterlaak.csproj",
-      "packagesPath": "/Users/bramsteenkamp/.nuget/packages/",
-      "outputPath": "/Users/bramsteenkamp/wdpr/theaterlaak/obj/",
+      "projectPath": "C:\\Users\\dgoed\\Desktop\\WDPR\\theaterlaak\\theaterlaak.csproj",
+      "packagesPath": "C:\\Users\\dgoed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dgoed\\Desktop\\WDPR\\theaterlaak\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/bramsteenkamp/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\dgoed\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2728,7 +2728,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
