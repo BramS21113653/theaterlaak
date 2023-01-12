@@ -1,8 +1,8 @@
  public class Donatie {
     public DateTime datum { get; set; }
     public int bedrag { get; set; }
-    public Begunstiger begunstiger;
-    public void createBegunstiger(Begunstiger begunstiger) {
-        this.begunstiger = begunstiger;
+    public Klant klant;
+    public void createklant(Klant klant) {
+        this.klant = klant;
     }
 }

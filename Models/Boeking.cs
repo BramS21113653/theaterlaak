@@ -1,13 +1,9 @@
 public class Boeking {
     public Klant klant;
     public Zaal zaal;
-    public Voorstelling? voorstelling;
-    public Zitplaats? zitplaats;
+    public ArrayList tickets = new ArrayList();
 
-    public Boeking (Klant klant, Zaal zaal, Voorstelling voorstelling, Zitplaats zitplaats) {
-        this.klant = klant;
-        this.zaal = zaal;
-        this.voorstelling = voorstelling;
-        this.zitplaats = zitplaats;
+    public void addGroep(Ticket ticket) {
+        tickets.Add(ticket);
     }
 }
