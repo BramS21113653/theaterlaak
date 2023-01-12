@@ -1,13 +1,48 @@
 footer {
   position: fixed;
   left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  font-size: 14px;
-  background-color: #ffee00;
-  box-shadow: 0 -4px 8px 0 rgb(0 0 0 / 20%);
   text-align: center;
-  word-break: break-all;
-  padding: 15px;
+  background: linear-gradient(to left, white, grey);
+  padding: 5px;
 }
 
+.links {
+  font-size: 100%;
+  color: black;
+  border-bottom: 0px;
+  text-decoration: none;
+  font-family: 'Impact', fantasy;
+}
+
+.column {
+float: left;
+width: 33%;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo_onderin{
+  position: absolute;
+  left: 0%;
+  bottom: 40%;
+}
+
+.text_footer{
+  position: absolute;
+  color: black;
+  bottom: 40%;
+  left: 15%;
+  font-family: 'Impact', fantasy;
+}
