@@ -152,3 +152,4 @@ C:\Users\dgoed\Desktop\WDPR\theaterlaak\obj\Debug\net6.0\theaterlaak.genruntimec
 C:\Users\dgoed\Desktop\WDPR\theaterlaak\obj\Debug\net6.0\ref\theaterlaak.dll
 C:\Users\dgoed\Desktop\WDPR\theaterlaak\bin\Debug\net6.0\package-lock.json
 C:\Users\dgoed\Desktop\WDPR\theaterlaak\bin\Debug\net6.0\package.json
+C:\Users\dgoed\Desktop\WDPR\theaterlaak\bin\Debug\net6.0\theaterlaak.staticwebassets.runtime.json
