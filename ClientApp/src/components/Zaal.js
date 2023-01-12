@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './Zaal.css';
 
-export class Zaal extends Component {
-  render() {
-    return (
-      <p>Zaal</p>
-    );
-  }
-}
+const Zaal = () => {
+
+    return <Zaal>
+
+    </Zaal>
+
+};
+
+export default Zaal;
