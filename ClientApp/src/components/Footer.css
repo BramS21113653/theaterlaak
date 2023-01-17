@@ -1,5 +1,5 @@
 footer {
-  position: fixed;
+  position: bottom;
   left: 0;
   right: 0;
   bottom: 0;
@@ -40,9 +40,6 @@ width: 33%;
 }
 
 .text_footer{
-  position: absolute;
   color: black;
-  bottom: 40%;
-  left: 15%;
   font-family: 'Impact', fantasy;
 }

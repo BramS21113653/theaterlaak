@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:44474",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\User\\IdeaProjects\\theaterlaak\\ClientApp\\",
+"WorkingDirectory": "/Users/bramsteenkamp/wdpr/theaterlaak/ClientApp/",
 "MaxTimeoutInSeconds": "120"
 }
 }

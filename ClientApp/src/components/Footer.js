@@ -14,9 +14,6 @@ const Footer = () => {
                 <p>
                     <img className='Logo_onderin' src='..\Images\Theater_logo-black.png' alt='Theater Laak' width='60' height='80'></img>
                 </p>
-                {/* <p> */}
-                    {/* <a className='links' href='default.asp'>Weer naar boven</a> */}
-                {/* </p> */}
             </div>
             <div class="column">
                 <p>
