@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { useDebugValue ,Component } from 'react';
+import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import AuthorizeRoute from './components/api-authorization/AuthorizeRoute';
@@ -17,6 +18,7 @@ export default class App extends Component {
             return <Route key={index} {...rest} element={requireAuth ? <AuthorizeRoute {...rest} element={element} /> : element} />;
           })}
         </Routes>
+        <Footer/>
       </Layout>
     );
   }

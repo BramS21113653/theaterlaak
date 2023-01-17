@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "XF3mmNMt/Alsgw7sIW6XYJY+WLD1cQDQQd5GgSeL7pLgYUAn/9d/k+GiH3km1w+87NhlBbXU4ChHBSQE+Ktv1w==",
+=======
+  "dgSpecHash": "SvxjAWmg/Lko8+3R7DfvbLXpUHIrNyjmiGwhYkG+Njost787BXLZyBD6Ef9dlJppPsz0nnveqF5xaU9hBvMX/A==",
+>>>>>>> Footer
   "success": true,
   "projectFilePath": "C:\\Users\\User\\IdeaProjects\\theaterlaak\\theaterlaak.csproj",
   "expectedPackageFiles": [
