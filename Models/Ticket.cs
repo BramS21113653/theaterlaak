@@ -9,7 +9,7 @@ namespace theaterlaak.Models
     public Zaal zaal;
 
     public void addGroep(Ticket ticket) {
-        tickets.Add(ticket);
+        // tickets.Add(ticket);
     }
 }
 }

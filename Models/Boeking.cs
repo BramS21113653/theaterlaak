@@ -1,3 +1,6 @@
+using System.Collections;
+using theaterlaak.Models;
+
 public class Boeking {
     public Klant klant;
     public Zaal zaal;
