@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using theaterlaak.Data;
 
@@ -10,9 +11,10 @@ using theaterlaak.Data;
 namespace theaterlaak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230119140205_8")]
+    partial class _8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -217,9 +219,6 @@ namespace theaterlaak.Data.Migrations
                     b.Property<string>("GroepId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("VoorstellingId")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("naam")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -229,8 +228,6 @@ namespace theaterlaak.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("GroepId");
-
-                    b.HasIndex("VoorstellingId");
 
                     b.ToTable("Groepen");
                 });
@@ -431,67 +428,6 @@ namespace theaterlaak.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Ticket", b =>
-                {
-                    b.Property<string>("TicketId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BoekingId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("VoorstellingId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ZaalId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ZitplaatsId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("prijs")
-                        .HasColumnType("REAL");
-
-                    b.HasKey("TicketId");
-
-                    b.HasIndex("BoekingId");
-
-                    b.HasIndex("VoorstellingId");
-
-                    b.HasIndex("ZaalId");
-
-                    b.HasIndex("ZitplaatsId");
-
-                    b.ToTable("Tickets");
-                });
-
-            modelBuilder.Entity("Voorstelling", b =>
-                {
-                    b.Property<string>("VoorstellingId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("omschrijving")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("prijs")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("titel")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("type")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("VoorstellingId");
-
-                    b.ToTable("Voorstellingen");
-                });
-
             modelBuilder.Entity("Zaal", b =>
                 {
                     b.Property<string>("ZaalId")
@@ -506,28 +442,6 @@ namespace theaterlaak.Data.Migrations
                     b.HasKey("ZaalId");
 
                     b.ToTable("Zalen");
-                });
-
-            modelBuilder.Entity("Zitplaats", b =>
-                {
-                    b.Property<string>("ZitplaatsId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ZaalId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("rangnummer")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("stoelnummer")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ZitplaatsId");
-
-                    b.HasIndex("ZaalId");
-
-                    b.ToTable("Zitplaatsen");
                 });
 
             modelBuilder.Entity("Boeking", b =>
@@ -550,13 +464,6 @@ namespace theaterlaak.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("zaal");
-                });
-
-            modelBuilder.Entity("Groep", b =>
-                {
-                    b.HasOne("Voorstelling", null)
-                        .WithMany("Groepen")
-                        .HasForeignKey("VoorstellingId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -610,70 +517,9 @@ namespace theaterlaak.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Ticket", b =>
-                {
-                    b.HasOne("Boeking", null)
-                        .WithMany("Tickets")
-                        .HasForeignKey("BoekingId");
-
-                    b.HasOne("Voorstelling", "voorstelling")
-                        .WithMany("Tickets")
-                        .HasForeignKey("VoorstellingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Zaal", "zaal")
-                        .WithMany("Tickets")
-                        .HasForeignKey("ZaalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Zitplaats", "zitplaats")
-                        .WithMany("Tickets")
-                        .HasForeignKey("ZitplaatsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("voorstelling");
-
-                    b.Navigation("zaal");
-
-                    b.Navigation("zitplaats");
-                });
-
-            modelBuilder.Entity("Zitplaats", b =>
-                {
-                    b.HasOne("Zaal", null)
-                        .WithMany("Zitplaatsen")
-                        .HasForeignKey("ZaalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Boeking", b =>
-                {
-                    b.Navigation("Tickets");
-                });
-
-            modelBuilder.Entity("Voorstelling", b =>
-                {
-                    b.Navigation("Groepen");
-
-                    b.Navigation("Tickets");
-                });
-
             modelBuilder.Entity("Zaal", b =>
                 {
                     b.Navigation("Gelegenheden");
-
-                    b.Navigation("Tickets");
-
-                    b.Navigation("Zitplaatsen");
-                });
-
-            modelBuilder.Entity("Zitplaats", b =>
-                {
-                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

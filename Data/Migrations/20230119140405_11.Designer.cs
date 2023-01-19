@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using theaterlaak.Data;
 
@@ -10,9 +11,10 @@ using theaterlaak.Data;
 namespace theaterlaak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230119140405_11")]
+    partial class _11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -431,12 +433,9 @@ namespace theaterlaak.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Ticket", b =>
+            modelBuilder.Entity("theaterlaak.Models.Ticket", b =>
                 {
                     b.Property<string>("TicketId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BoekingId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("VoorstellingId")
@@ -455,8 +454,6 @@ namespace theaterlaak.Data.Migrations
                         .HasColumnType("REAL");
 
                     b.HasKey("TicketId");
-
-                    b.HasIndex("BoekingId");
 
                     b.HasIndex("VoorstellingId");
 
@@ -524,8 +521,6 @@ namespace theaterlaak.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ZitplaatsId");
-
-                    b.HasIndex("ZaalId");
 
                     b.ToTable("Zitplaatsen");
                 });
@@ -610,26 +605,22 @@ namespace theaterlaak.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Ticket", b =>
+            modelBuilder.Entity("theaterlaak.Models.Ticket", b =>
                 {
-                    b.HasOne("Boeking", null)
-                        .WithMany("Tickets")
-                        .HasForeignKey("BoekingId");
-
                     b.HasOne("Voorstelling", "voorstelling")
-                        .WithMany("Tickets")
+                        .WithMany()
                         .HasForeignKey("VoorstellingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Zaal", "zaal")
-                        .WithMany("Tickets")
+                        .WithMany()
                         .HasForeignKey("ZaalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Zitplaats", "zitplaats")
-                        .WithMany("Tickets")
+                        .WithMany()
                         .HasForeignKey("ZitplaatsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -641,39 +632,14 @@ namespace theaterlaak.Data.Migrations
                     b.Navigation("zitplaats");
                 });
 
-            modelBuilder.Entity("Zitplaats", b =>
-                {
-                    b.HasOne("Zaal", null)
-                        .WithMany("Zitplaatsen")
-                        .HasForeignKey("ZaalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Boeking", b =>
-                {
-                    b.Navigation("Tickets");
-                });
-
             modelBuilder.Entity("Voorstelling", b =>
                 {
                     b.Navigation("Groepen");
-
-                    b.Navigation("Tickets");
                 });
 
             modelBuilder.Entity("Zaal", b =>
                 {
                     b.Navigation("Gelegenheden");
-
-                    b.Navigation("Tickets");
-
-                    b.Navigation("Zitplaatsen");
-                });
-
-            modelBuilder.Entity("Zitplaats", b =>
-                {
-                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }
