@@ -24,6 +24,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     public DbSet<Zaal> Zalen { get; set; } = default!;
     public DbSet<Zitplaats> Zitplaatsen { get; set; } = default!;
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        base.OnModelCreating(modelBuilder);
         // modelBuilder.Entity<Post>()
         //     .HasOne(p => p.Blog)
         //     .WithMany(b => b.Posts);
