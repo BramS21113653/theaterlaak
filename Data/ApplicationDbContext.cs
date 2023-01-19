@@ -13,5 +13,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
 
     }
+
+    public DbSet<Boeking> Boekingen { get; set; } = default!;
 }
 
