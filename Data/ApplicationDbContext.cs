@@ -5,7 +5,6 @@ using Duende.IdentityServer.EntityFramework.Options;
 using theaterlaak.Models;
 
 namespace theaterlaak.Data;
-
 public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
 {
     public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
@@ -18,11 +17,12 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     public DbSet<Donatie> Donaties { get; set; } = default!;
     public DbSet<Gelegenheid> Gelegenheden { get; set; } = default!;
     public DbSet<Groep> Groepen { get; set; } = default!;
-    // public DbSet<Klant> Klanten { get; set; } = default!;
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; } = default!;
     public DbSet<Ticket> Tickets { get; set; } = default!;
     public DbSet<Voorstelling> Voorstellingen { get; set; } = default!;
     public DbSet<Zaal> Zalen { get; set; } = default!;
     public DbSet<Zitplaats> Zitplaatsen { get; set; } = default!;
+    public DbSet<Interesse> Interesses { get; set; } = default!;
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
         // modelBuilder.Entity<Post>()

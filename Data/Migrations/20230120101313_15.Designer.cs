@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using theaterlaak.Data;
 
@@ -10,9 +11,10 @@ using theaterlaak.Data;
 namespace theaterlaak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230120101313_15")]
+    partial class _15
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -369,22 +371,13 @@ namespace theaterlaak.Data.Migrations
                     b.Property<string>("BoekingId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("ZaalId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("applicationUserId")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("BoekingId");
 
                     b.HasIndex("ZaalId");
-
-                    b.HasIndex("applicationUserId");
 
                     b.ToTable("Boekingen");
                 });
@@ -484,9 +477,6 @@ namespace theaterlaak.Data.Migrations
                     b.Property<string>("BoekingId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("VoorstellingId")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -496,10 +486,6 @@ namespace theaterlaak.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ZitplaatsId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("applicationUserId")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -515,8 +501,6 @@ namespace theaterlaak.Data.Migrations
                     b.HasIndex("ZaalId");
 
                     b.HasIndex("ZitplaatsId");
-
-                    b.HasIndex("applicationUserId");
 
                     b.ToTable("Tickets");
                 });
@@ -643,14 +627,6 @@ namespace theaterlaak.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("theaterlaak.Models.ApplicationUser", "applicationUser")
-                        .WithMany()
-                        .HasForeignKey("applicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("applicationUser");
-
                     b.Navigation("zaal");
                 });
 
@@ -710,14 +686,6 @@ namespace theaterlaak.Data.Migrations
                         .HasForeignKey("ZitplaatsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("theaterlaak.Models.ApplicationUser", "applicationUser")
-                        .WithMany()
-                        .HasForeignKey("applicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("applicationUser");
 
                     b.Navigation("voorstelling");
 

@@ -1,7 +1,6 @@
 
-using System.Collections;
 using System.ComponentModel.DataAnnotations;
-
+namespace theaterlaak.Models;
 public class Gelegenheid {
     [Key]
     public string GelegenheidId { get; set; }

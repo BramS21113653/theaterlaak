@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+namespace theaterlaak.Models;
     public class Ticket {
     [Key]
     public string TicketId { get; set;}
@@ -7,8 +8,8 @@ using System.ComponentModel.DataAnnotations;
     public string VoorstellingId { get; set;}
     public Voorstelling voorstelling { get; set; }
     public double prijs { get; set; }
-    // public string KlantId { get; set;}
-    // public Klant klant { get; set; }
+    public int UserId { get; set;}
+    public ApplicationUser applicationUser { get; set; }
     public string ZaalId { get; set;}
     public Zaal zaal { get; set; }
 

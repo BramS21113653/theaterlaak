@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-
+namespace theaterlaak.Models;
 public class Zitplaats {
     [Key]
     public string ZitplaatsId { get; set; }

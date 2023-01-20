@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-
+namespace theaterlaak.Models;
 public class Groep {
     [Key]
     public string GroepId { get; set; }

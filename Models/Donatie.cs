@@ -1,4 +1,5 @@
  using System.ComponentModel.DataAnnotations;
+ namespace theaterlaak.Models;
  public class Donatie {
     [Key]
     public string DonatieId { get; set; }

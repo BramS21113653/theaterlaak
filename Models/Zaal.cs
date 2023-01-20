@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+namespace theaterlaak.Models;
 public class Zaal {
     [Key]
     public String ZaalId { get; set; }
