@@ -2,7 +2,7 @@
  namespace theaterlaak.Models;
  public class Donatie {
     [Key]
-    public string DonatieId { get; set; }
+    public string donatieId { get; set; }
     public DateTime datum { get; set; }
     public int bedrag { get; set; }
     // public string KlantId { get; set;}

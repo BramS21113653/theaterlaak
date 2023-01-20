@@ -30,31 +30,31 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
         //     .WithMany(b => b.Posts);
         modelBuilder.Entity<Boeking>()
             .HasOne(b => b.zaal)
-            .WithMany(z => z.Boekingen);
+            .WithMany(z => z.boekingen);
 
         modelBuilder.Entity<Gelegenheid>()
             .HasOne(g => g.zaal)
-            .WithMany(z => z.Gelegenheden);
+            .WithMany(z => z.gelegenheden);
 
         modelBuilder.Entity<Gelegenheid>()
             .HasOne(g => g.voorstelling)
-            .WithMany(v => v.Gelegenheden);
+            .WithMany(v => v.gelegenheden);
 
         modelBuilder.Entity<Ticket>()
             .HasOne(t => t.voorstelling)
-            .WithMany(v => v.Tickets);
+            .WithMany(v => v.tickets);
 
         modelBuilder.Entity<Ticket>()
             .HasOne(t => t.zitplaats)
-            .WithMany(z => z.Tickets);
+            .WithMany(z => z.tickets);
 
         modelBuilder.Entity<Ticket>()
             .HasOne(t => t.zaal)
-            .WithMany(z => z.Tickets);
+            .WithMany(z => z.tickets);
 
         modelBuilder.Entity<Zitplaats>()
             .HasOne(z => z.zaal)
-            .WithMany(za => za.Zitplaatsen);
+            .WithMany(za => za.zitplaatsen);
     }
 }
 
