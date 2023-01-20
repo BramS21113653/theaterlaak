@@ -5,7 +5,16 @@ using Microsoft.EntityFrameworkCore;
 using theaterlaak.Data;
 using theaterlaak.Models;
 
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("*");
+                      });
+});
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -44,6 +53,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthentication();
 app.UseIdentityServer();
 app.UseAuthorization();

@@ -4,10 +4,26 @@ import './Home.css';
 export class Home extends Component {
   static displayName = Home.name;
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      test: null
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://localhost:7003/api/Groep')
+    .then(response => response.text())
+    .then(data => this.setState({ test: data }))
+  }
+
   render() {
+    const { test } = this.state;
     return (
       <div>
-        
+        <h1>Doet hij het? { test }</h1>
+
         <img className='bannerfoto' src="..\images\2000.jpg" alt="foto "></img>
         <div className='overons'>
           <div className='textoverOns'>
