@@ -37,6 +37,7 @@ namespace theaterlaak.Controllers
         [HttpPost]
         public async Task<ActionResult<Groep>> PostGroep(Groep groep)
         {
+            Console.WriteLine(groep); 
             _context.Groepen.Add(groep);
             await _context.SaveChangesAsync();
 
