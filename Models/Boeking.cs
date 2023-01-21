@@ -7,7 +7,7 @@ public class Boeking {
     public ApplicationUser applicationUser { get; set; }
     public string zaalId { get; set;}
     public Zaal zaal { get; set; }
-    public List<Ticket> tickets { get; set; }
+    public List<Ticket>? tickets { get; set; }
 
     // public void addGroep(Ticket ticket) {
     //     tickets.Add(ticket);

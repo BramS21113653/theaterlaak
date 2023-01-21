@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using theaterlaak.Data;
 
@@ -10,9 +11,10 @@ using theaterlaak.Data;
 namespace theaterlaak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230121120359_17")]
+    partial class _17
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -442,11 +444,16 @@ namespace theaterlaak.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("voorstellingId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("website")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("groepId");
+
+                    b.HasIndex("voorstellingId");
 
                     b.ToTable("Groepen");
                 });
@@ -516,10 +523,6 @@ namespace theaterlaak.Data.Migrations
                     b.Property<string>("voorstellingId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("groepId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("omschrijving")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -536,8 +539,6 @@ namespace theaterlaak.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("voorstellingId");
-
-                    b.HasIndex("groepId");
 
                     b.ToTable("Voorstellingen");
                 });
@@ -669,6 +670,13 @@ namespace theaterlaak.Data.Migrations
                     b.Navigation("zaal");
                 });
 
+            modelBuilder.Entity("theaterlaak.Models.Groep", b =>
+                {
+                    b.HasOne("theaterlaak.Models.Voorstelling", null)
+                        .WithMany("Groepen")
+                        .HasForeignKey("voorstellingId");
+                });
+
             modelBuilder.Entity("theaterlaak.Models.Interesse", b =>
                 {
                     b.HasOne("theaterlaak.Models.ApplicationUser", null)
@@ -715,24 +723,15 @@ namespace theaterlaak.Data.Migrations
                     b.Navigation("zitplaats");
                 });
 
-            modelBuilder.Entity("theaterlaak.Models.Voorstelling", b =>
-                {
-                    b.HasOne("theaterlaak.Models.Groep", "groep")
-                        .WithMany("voorstellingen")
-                        .HasForeignKey("groepId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("groep");
-                });
-
             modelBuilder.Entity("theaterlaak.Models.Zitplaats", b =>
                 {
-                    b.HasOne("theaterlaak.Models.Zaal", null)
+                    b.HasOne("theaterlaak.Models.Zaal", "zaal")
                         .WithMany("zitplaatsen")
                         .HasForeignKey("zaalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("zaal");
                 });
 
             modelBuilder.Entity("theaterlaak.Models.ApplicationUser", b =>
@@ -745,13 +744,10 @@ namespace theaterlaak.Data.Migrations
                     b.Navigation("tickets");
                 });
 
-            modelBuilder.Entity("theaterlaak.Models.Groep", b =>
-                {
-                    b.Navigation("voorstellingen");
-                });
-
             modelBuilder.Entity("theaterlaak.Models.Voorstelling", b =>
                 {
+                    b.Navigation("Groepen");
+
                     b.Navigation("gelegenheden");
 
                     b.Navigation("tickets");

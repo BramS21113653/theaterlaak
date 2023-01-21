@@ -5,5 +5,7 @@ public class Groep {
     public string groepId { get; set; }
     public string naam { get; set; }
     public string website { get; set; }
+    public List<Voorstelling>? voorstellingen { get; set; }
+
     // public List<ApplicationUser> ApplicationUsers { get; set; }
 }

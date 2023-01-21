@@ -28,33 +28,38 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
         // modelBuilder.Entity<Post>()
         //     .HasOne(p => p.Blog)
         //     .WithMany(b => b.Posts);
-        modelBuilder.Entity<Boeking>()
-            .HasOne(b => b.zaal)
-            .WithMany(z => z.boekingen);
+        // modelBuilder.Entity<Boeking>()
+        //     .HasOne(b => b.zaal)
+        //     .WithMany(z => z.boekingen);
 
-        modelBuilder.Entity<Gelegenheid>()
-            .HasOne(g => g.zaal)
-            .WithMany(z => z.gelegenheden);
+        // modelBuilder.Entity<Gelegenheid>()
+        //     .HasOne(g => g.zaal)
+        //     .WithMany(z => z.gelegenheden);
 
-        modelBuilder.Entity<Gelegenheid>()
-            .HasOne(g => g.voorstelling)
-            .WithMany(v => v.gelegenheden);
+        // modelBuilder.Entity<Gelegenheid>()
+        //     .HasOne(g => g.voorstelling)
+        //     .WithMany(v => v.gelegenheden);
 
-        modelBuilder.Entity<Ticket>()
-            .HasOne(t => t.voorstelling)
-            .WithMany(v => v.tickets);
+        // modelBuilder.Entity<Ticket>()
+        //     .HasOne(t => t.voorstelling)
+        //     .WithMany(v => v.tickets);
 
-        modelBuilder.Entity<Ticket>()
-            .HasOne(t => t.zitplaats)
-            .WithMany(z => z.tickets);
+        // modelBuilder.Entity<Ticket>()
+        //     .HasOne(t => t.zitplaats)
+        //     .WithMany(z => z.tickets);
 
-        modelBuilder.Entity<Ticket>()
-            .HasOne(t => t.zaal)
-            .WithMany(z => z.tickets);
+        // modelBuilder.Entity<Ticket>()
+        //     .HasOne(t => t.zaal)
+        //     .WithMany(z => z.tickets);
 
-        modelBuilder.Entity<Zitplaats>()
-            .HasOne(z => z.zaal)
-            .WithMany(za => za.zitplaatsen);
+        // modelBuilder.Entity<Zitplaats>()
+        //     .HasOne(z => z.zaal)
+        //     .WithMany(za => za.zitplaatsen);
+    }
+
+    internal Task FindAsync(int id)
+    {
+        throw new NotImplementedException();
     }
 }
 

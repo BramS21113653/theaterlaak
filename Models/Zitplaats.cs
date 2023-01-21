@@ -7,7 +7,7 @@ public class Zitplaats {
     public int rangnummer { get; set; }
     public string zaalId { get; set;}
     public Zaal zaal;
-    public List<Ticket> tickets { get; set; }
+    public List<Ticket>? tickets { get; set; }
     // public Zitplaats (Zaal zaal) {
     //     this.zaal = zaal;
     // }

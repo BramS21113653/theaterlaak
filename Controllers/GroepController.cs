@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using theaterlaak.Data;
+using theaterlaak.Models;
 
 namespace theaterlaak.Controllers
 {
@@ -11,9 +13,41 @@ namespace theaterlaak.Controllers
     [ApiController]
     public class GroepController : ControllerBase
     {
-        public string Get()
+
+        private readonly ApplicationDbContext _context;
+
+        public GroepController(ApplicationDbContext context)
         {
-            return "welcome";
+            _context = context;
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Groep>> GetGroep(string id)
+        {
+            var groep = await _context.Groepen.FindAsync(id);
+            // var todoItem = await _context.TodoItems.FindAsync(id);
+
+            if (groep == null)
+            {
+                return NotFound();
+            }
+
+            return groep;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Groep>> PostGroep(Groep groep)
+        {
+            _context.Groepen.Add(groep);
+            await _context.SaveChangesAsync();
+
+            //    return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetGroep), new { id = groep.groepId }, groep);
+        }
+
+        // public string Get()
+        // {
+        //     return "welcome";
+        // }
     }
 }

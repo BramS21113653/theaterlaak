@@ -4,7 +4,6 @@
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/package-lock.json
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/package.json
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/theaterlaak.staticwebassets.runtime.json
-/Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/app.db
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/theaterlaak
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/theaterlaak.deps.json
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/theaterlaak.runtimeconfig.json
@@ -301,3 +300,4 @@
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
+/Users/bramsteenkamp/wdpr/theaterlaak/bin/Debug/net6.0/app.db

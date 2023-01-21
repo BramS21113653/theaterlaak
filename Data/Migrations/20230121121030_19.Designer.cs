@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using theaterlaak.Data;
 
@@ -10,9 +11,10 @@ using theaterlaak.Data;
 namespace theaterlaak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230121121030_19")]
+    partial class _19
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -516,7 +518,10 @@ namespace theaterlaak.Data.Migrations
                     b.Property<string>("voorstellingId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("groepId")
+                    b.Property<int>("groepId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("groepId1")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -537,7 +542,7 @@ namespace theaterlaak.Data.Migrations
 
                     b.HasKey("voorstellingId");
 
-                    b.HasIndex("groepId");
+                    b.HasIndex("groepId1");
 
                     b.ToTable("Voorstellingen");
                 });
@@ -719,7 +724,7 @@ namespace theaterlaak.Data.Migrations
                 {
                     b.HasOne("theaterlaak.Models.Groep", "groep")
                         .WithMany("voorstellingen")
-                        .HasForeignKey("groepId")
+                        .HasForeignKey("groepId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
