@@ -25,7 +25,6 @@ namespace theaterlaak.Controllers
         public async Task<ActionResult<Groep>> GetGroep(string id)
         {
             var groep = await _context.Groepen.FindAsync(id);
-            // var todoItem = await _context.TodoItems.FindAsync(id);
 
             if (groep == null)
             {
