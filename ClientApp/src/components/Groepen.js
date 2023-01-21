@@ -13,14 +13,18 @@ export class Groepen extends Component {
         voorstellingen: null
       };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({groepId: event.target.groepId});
-    this.setState({naam: event.target.naam});
-    this.setState({website: event.target.website});
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   handleSubmit(event) {
@@ -42,13 +46,13 @@ export class Groepen extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
         id:
-          <input name='groepId' type="text" value={this.state.groepId} onChange={this.handleChange} />
+          <input name='groepId' type="text" value={this.state.groepId} onChange={this.handleInputChange} />
         </label><label>
         Groepsnaam:
-          <input name='naam' type="text" value={this.state.naam} onChange={this.handleChange} />
+          <input name='naam' type="text" value={this.state.naam} onChange={this.handleInputChange} />
           </label><label>
         Website:
-          <input name='website' type="text" value={this.state.website} onChange={this.handleChange} />
+          <input name='website' type="text" value={this.state.website} onChange={this.handleInputChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
