@@ -41,13 +41,7 @@ namespace theaterlaak.Controllers
             _context.Groepen.Add(groep);
             await _context.SaveChangesAsync();
 
-            //    return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
             return CreatedAtAction(nameof(GetGroep), new { id = groep.groepId }, groep);
         }
-
-        // public string Get()
-        // {
-        //     return "welcome";
-        // }
     }
 }
