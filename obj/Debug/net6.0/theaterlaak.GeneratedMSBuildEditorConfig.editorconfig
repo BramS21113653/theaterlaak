@@ -9,21 +9,21 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = theaterlaak
 build_property.RootNamespace = theaterlaak
-build_property.ProjectDir = C:\Users\lvkop\Desktop\WDPR2\theaterlaak\
+build_property.ProjectDir = /Users/bramsteenkamp/wdpr/theaterlaak/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\lvkop\Desktop\WDPR2\theaterlaak
+build_property.MSBuildProjectDirectory = /Users/bramsteenkamp/wdpr/theaterlaak
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/lvkop/Desktop/WDPR2/theaterlaak/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/bramsteenkamp/wdpr/theaterlaak/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lvkop/Desktop/WDPR2/theaterlaak/Pages/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[/Users/bramsteenkamp/wdpr/theaterlaak/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lvkop/Desktop/WDPR2/theaterlaak/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/bramsteenkamp/wdpr/theaterlaak/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
