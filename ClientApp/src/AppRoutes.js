@@ -4,6 +4,7 @@ import { Tickets } from "./components/Tickets";
 import { Home } from "./components/Home";
 import { Zaal } from "./components/Zaal";
 import { Groepen } from "./components/Groepen";
+import { ApplicationUser } from './components/ApplicationUser';
 
 const AppRoutes = [
   {
@@ -28,6 +29,11 @@ const AppRoutes = [
     path: '/groep',
     // requireAuth: true,
     element: <Groepen />
+  },
+  {
+    path: '/applicationuser',
+    // requireAuth: true,
+    element: <ApplicationUser />
   },
   ...ApiAuthorzationRoutes
 ];

@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './Home.css';
 
-export class Groepen extends Component {
-  static displayName = Groepen.name;
+export class ApplicationUser extends Component {
+  static displayName = ApplicationUser.name;
 
   constructor(props) {
     super(props);
     this.state = {
-        groepId: "4",
-        naam: "werkt",
-        website: "werkt",
-        voorstellingen: null
+        Id: "1",
+        groepId: "1"
       };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -29,11 +27,11 @@ export class Groepen extends Component {
 
   handleSubmit(event) {
     const requestOptions = {
-        method: 'POST',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(this.state)
     };
-    fetch('https://localhost:7003/api/Groep', requestOptions)
+    fetch('https://localhost:7003/api/ApplicationUser', requestOptions)
     .then((response) => response.json())
     .then((data) => console.log(data));
 
@@ -44,17 +42,14 @@ export class Groepen extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>Groep toevoegen:</h1>
+        <h1>Groep toevoegen/wijzigen van acteur:</h1>
         <label>
-        id:
-          <input name='groepId' type="text" value={this.state.groepId} onChange={this.handleInputChange} />
+        Id van de acteur:
+          <input name='Id' type="text" value={this.state.Id} onChange={this.handleInputChange} />
         </label><label>
-        Groepsnaam:
-          <input name='naam' type="text" value={this.state.naam} onChange={this.handleInputChange} />
-          </label><label>
-        Website:
-          <input name='website' type="text" value={this.state.website} onChange={this.handleInputChange} />
-        </label>
+        Id van de groep:
+          <input name='groepId' type="text" value={this.state.groepId} onChange={this.handleInputChange} />
+          </label>
         <input type="submit" value="Submit" />
       </form>
     );

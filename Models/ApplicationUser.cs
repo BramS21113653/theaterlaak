@@ -6,6 +6,8 @@ public class ApplicationUser : IdentityUser
     public List<Interesse>? interesses { get; set; }
     public string? adres { get; set;}
     public DateTime? geboortedatum { get; set; }
+    public string? groepId { get; set;}
+    public Groep? groep { get; set; }
 
     // public void addInteresse(string interesse) {
     //     interesses.Add(interesse);
