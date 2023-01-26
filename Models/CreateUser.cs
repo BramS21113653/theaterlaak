@@ -5,11 +5,11 @@
 //     private readonly UserManager<ApplicationUser> _userManager;
 //     private readonly RoleManager<IdentityRole> _roleManager;
 
-//     // public CreateUser(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
-//     //     {
-//     //         _userManager = userManager;
-//     //         _signInManager = signInManager;
-//     //     }
+//     public CreateUser(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+//         {
+//             _userManager = userManager;
+//             _signInManager = signInManager;
+//         }
 //     public async Task CreateRolesandUsers() {  
 //         bool x = await _roleManager.RoleExistsAsync("Admin");
 //         if (!x)

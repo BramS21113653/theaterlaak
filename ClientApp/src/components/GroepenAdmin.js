@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 
-export class Groepen extends Component {
-  static displayName = Groepen.name;
+export class GroepenAdmin extends Component {
+  static displayName = GroepenAdmin.name;
 
   constructor(props) {
     super(props);
