@@ -9,5 +9,6 @@ public class Voorstelling {
     public int prijs { get; set; }
     public List<Ticket>? tickets { get; set; }
     public List<Gelegenheid>? gelegenheden { get; set; }
+    public string groepId { get; set;}
     public Groep groep { get; set; }
 }

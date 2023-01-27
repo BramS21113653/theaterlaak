@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using theaterlaak.Data;
 using theaterlaak.Models;
 
@@ -34,6 +35,17 @@ namespace theaterlaak.Controllers
 
             return gelegenheid;
         }
+
+        [HttpGet("all")]
+        public async Task<IEnumerable<Gelegenheid>> GetAll()
+            {
+                var gelegenheden = await _context.Gelegenheden.ToListAsync();
+                foreach (var gelegenheid in gelegenheden) {
+                    Voorstelling voorstelling = await _context.Voorstellingen.Where(voorstelling => voorstelling.voorstellingId == gelegenheid.voorstellingId).FirstAsync();
+                    gelegenheid.voorstelling.titel = voorstelling.titel;
+                }
+                return gelegenheden;
+            }
 
         [Authorize(Roles = "ADMIN")]
         [HttpPost]
