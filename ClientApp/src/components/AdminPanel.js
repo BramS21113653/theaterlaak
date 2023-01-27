@@ -23,7 +23,7 @@ export const AdminPanel = (props) => {
     };
     return (
         <div>
-            <p><button onClick={navigateToZaalAdmin}>Zaal Wijzigen</button></p>
+            <p><button onClick={navigateToZaalAdmin}>Zaal/zitplaatsen Wijzigen</button></p>
             <p><button onClick={navigateToGroepenAdmin}>Groep Wijzigen</button></p>
             <p><button onClick={navigateToApplicationUserAdmin}>ApplicationUser Wijzigen</button></p>
             <div>

@@ -35,7 +35,7 @@ namespace theaterlaak.Controllers
             return zitplaats;
         }
 
-        [Authorize(Roles = "ADMIN")]
+        // [Authorize(Roles = "ADMIN")]
         [HttpPost]
         public async Task<ActionResult<Zitplaats>> PostZitplaats(Zitplaats zitplaats)
         {

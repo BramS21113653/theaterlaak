@@ -42,7 +42,7 @@ export class ApplicationUserAdmin extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>Groep toevoegen/wijzigen van acteur:</h1>
+        <h1>Acteur toevoegen aan een groep of de groep van een acteur wijzigen: </h1>
         <label>
         Id van de acteur:
           <input name='Id' type="text" value={this.state.Id} onChange={this.handleInputChange} />

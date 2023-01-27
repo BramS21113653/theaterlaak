@@ -60,7 +60,7 @@ namespace theaterlaak.Controllers
                         // existingGroep.groepId = groep.groepId;
                         existingGroep.naam = groep.naam;
                         existingGroep.website = groep.website;
-
+                        // existingGroep = groep;
                         await ctx.SaveChangesAsync();
                         return Ok();
 

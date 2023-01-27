@@ -25,6 +25,9 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     public DbSet<Interesse> Interesses { get; set; } = default!;
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Zitplaats>()
+            .Property(f => f.zitplaatsId)
+            .ValueGeneratedOnAdd();
         // modelBuilder.Entity<Post>()
         //     .HasOne(p => p.Blog)
         //     .WithMany(b => b.Posts);

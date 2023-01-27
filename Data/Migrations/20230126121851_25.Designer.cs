@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using theaterlaak.Data;
 
@@ -10,9 +11,10 @@ using theaterlaak.Data;
 namespace theaterlaak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230126121851_25")]
+    partial class _25
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -554,6 +556,9 @@ namespace theaterlaak.Data.Migrations
                     b.Property<int?>("aantalZitplaatsen")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("zaalnummer")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("zaalId");
 
                     b.ToTable("Zalen");
@@ -562,10 +567,12 @@ namespace theaterlaak.Data.Migrations
             modelBuilder.Entity("theaterlaak.Models.Zitplaats", b =>
                 {
                     b.Property<string>("zitplaatsId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("rangnummer")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("soortZitplaats")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("stoelnummer")
@@ -712,7 +719,7 @@ namespace theaterlaak.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("theaterlaak.Models.Zitplaats", "zitplaats")
-                        .WithMany()
+                        .WithMany("tickets")
                         .HasForeignKey("zitplaatsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -779,6 +786,11 @@ namespace theaterlaak.Data.Migrations
                     b.Navigation("tickets");
 
                     b.Navigation("zitplaatsen");
+                });
+
+            modelBuilder.Entity("theaterlaak.Models.Zitplaats", b =>
+                {
+                    b.Navigation("tickets");
                 });
 #pragma warning restore 612, 618
         }

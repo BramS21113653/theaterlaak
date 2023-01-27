@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import { ZitplaatsAdmin } from './ZitplaatsAdmin';
 
 export class ZaalAdmin extends Component {
   static displayName = ZaalAdmin.name;
@@ -8,8 +9,7 @@ export class ZaalAdmin extends Component {
     super(props);
     this.state = {
         zaalId: "1",
-        zaalnummer: "1",
-        aantalZitplaatsen: "50",
+        aantalZitplaatsen: null,
         gelegenheid: null,
         ticket: null,
         zitplaats: null,
@@ -46,20 +46,21 @@ export class ZaalAdmin extends Component {
 
   render() {
     return (
+      <div>
       <form onSubmit={this.handleSubmit}>
         <h1>Zaal toevoegen:</h1>
         <label>
         Id:
           <input name='zaalId' type="text" value={this.state.zaalId} onChange={this.handleInputChange} />
-        </label><label>
-        Nummer:
-          <input name='zaalnummer' type="text" value={this.state.zaalnummer} onChange={this.handleInputChange} />
-          </label><label>
+        </label>
+          {/* <label>
         Aantal zitplaatsen:
           <input name='aantalZitplaatsen' type="text" value={this.state.aantalZitplaatsen} onChange={this.handleInputChange} />
-        </label>
+        </label> */}
         <input type="submit" value="Submit" />
       </form>
+      <ZitplaatsAdmin/>
+      </div>
     );
   }
 }
