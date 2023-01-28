@@ -23,6 +23,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     public DbSet<Zaal> Zalen { get; set; } = default!;
     public DbSet<Zitplaats> Zitplaatsen { get; set; } = default!;
     public DbSet<Interesse> Interesses { get; set; } = default!;
+    public DbSet<Betaling> Betalingen { get; set; } = default!;
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Zitplaats>()

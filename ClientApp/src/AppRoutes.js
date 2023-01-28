@@ -7,6 +7,7 @@ import { GroepenAdmin } from "./components/GroepenAdmin";
 import { ApplicationUserAdmin } from './components/ApplicationUserAdmin';
 import { ZaalAdmin } from './components/ZaalAdmin';
 import { AdminPanel } from './components/AdminPanel';
+import { Betaling } from './components/Betaling';
 
 const AppRoutes = [
   {
@@ -46,6 +47,11 @@ const AppRoutes = [
     path: '/zaaladmin',
     // requireAuth: true,
     element: <ZaalAdmin />
+  },
+  {
+    path: '/betaling',
+    // requireAuth: true,
+    element: <Betaling />
   },
   ...ApiAuthorzationRoutes
 ];
