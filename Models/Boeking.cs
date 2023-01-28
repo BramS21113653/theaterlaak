@@ -8,8 +8,6 @@ public class Boeking {
     public string zaalId { get; set;}
     public Zaal zaal { get; set; }
     public List<Ticket>? tickets { get; set; }
-
-    // public void addGroep(Ticket ticket) {
-    //     tickets.Add(ticket);
-    // }
+    public string gelegenheidId { get; set; }
+    public Gelegenheid gelegenheid { get; set; }
 }

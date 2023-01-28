@@ -14,13 +14,4 @@ public class Gelegenheid {
     public string zaalId { get; set;}
     // reference navigation property
     public Zaal zaal { get; set; }
-
-    //constructor overbodig met properties
-    // public Gelegenheid(Voorstelling voorstelling, Zaal zaal) {
-    //     this.voorstelling = voorstelling;
-    //     this.zaal = zaal;
-    //     this.zitplaatsenBeschikbaar = new ArrayList();
-    //     //zitplaatsen uit db halen van betreffende zaal
-    //     this.zitplaatsenBeschikbaar.Add("fixme");
-    // }
 }

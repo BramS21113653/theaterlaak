@@ -12,8 +12,4 @@ namespace theaterlaak.Models;
     public ApplicationUser applicationUser { get; set; }
     public string zaalId { get; set;}
     public Zaal zaal { get; set; }
-
-    // public void addGroep(Ticket ticket) {
-    //     // tickets.Add(ticket);
-    // }
 }

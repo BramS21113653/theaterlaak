@@ -1,54 +1,54 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import React from 'react';
 
 export const Zaal = () => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [err, setErr] = useState('');
 
-  const handleClick = async () => {
-    setIsLoading(true);
+  useEffect(() => {
+    // fetch data
+    const dataFetch = async () => {
+      const data = await (
+        await fetch(
+          "https://localhost:7003/api/zaal/all"
+        )
+      ).json();
 
-    try {
-      const response = await fetch('https://localhost:7003/api/zaal/all', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-        },
-      });
+      // set state when the data received
+      setData(data);
+    };
 
-      if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-
-      console.log('result is: ', JSON.stringify(result, null, 4));
-
-      setData(result);
-      console.log(data);
-    } catch (err) {
-      setErr(err.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    dataFetch();
+  }, []);
 
   return (
     <div>
-      {err && <h2>{err}</h2>}
-
-      <button style={{backgroundColor: "SkyBlue"}} onClick={handleClick}>Laad alle zalen om een reservering te doen...</button>
-
-      {isLoading && <h2>Loading...</h2>}
-
-      <div>
+        <h1>Zaal reserveren</h1>
         {data.map(zaal => (
-          <div key={zaal.zaalId}><br></br>Zaal {zaal.zaalId}<br></br>Aantal zitplaatsen: {zaal.aantalZitplaatsen}<br></br><button>Reserveer zaal {zaal.zaalId}</button></div>
+          <div>
+            <div key={zaal.zaalId} style={{fontWeight: "bold"}}>
+              Zaal {zaal.zaalId}<br></br>
+              Aantal zitplaatsen: {zaal.aantalZitplaatsen}<br></br>
+            </div>
+            <div>Selecteer een datum<br></br>
+              <select name="language" id="language" style={{color: "red"}}>
+                <option value="vandaag" defaultValue>Vandaag</option>
+                <option value="morgen">morgen</option>
+                <option value="overmogen">overmogen</option>
+                <option value="overovermorgen">overovermorgen</option>
+              </select><br></br>
+              <button style={{color: "red"}}>Reserveer zaal {zaal.zaalId}</button>
+              <br></br><br></br>
+            </div>
+          </div>
         ))}
-        <br></br>
-      </div>
     </div>
   );
 };
 
+// benodigd voor boeking
+
+// alles van zaal bekend
+// datetime = datum in dropdown
+// user == currentuser
+
+// ---->>>>> naar betaling wanneer betaling gelukt is, boeking naar db
