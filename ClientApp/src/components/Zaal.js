@@ -49,6 +49,7 @@ export const Zaal = () => {
 
 // alles van zaal bekend
 // datetime = datum in dropdown
+// prijs                                      nog toevoegen aan zalen...
 // user == currentuser
 
 // ---->>>>> naar betaling wanneer betaling gelukt is, boeking naar db
