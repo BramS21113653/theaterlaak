@@ -29,6 +29,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
         modelBuilder.Entity<Zitplaats>()
             .Property(f => f.zitplaatsId)
             .ValueGeneratedOnAdd();
+                
         // modelBuilder.Entity<Post>()
         //     .HasOne(p => p.Blog)
         //     .WithMany(b => b.Posts);

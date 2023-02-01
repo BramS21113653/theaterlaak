@@ -11,7 +11,7 @@ export const Searchbar = () => {
   
     return (
       <div className="main">
-        <h1>Zoek een voorstelling</h1>
+        <h2>Zoek een voorstelling op titel</h2>
         <div className="search">
           <input
             id="outlined-basic"
