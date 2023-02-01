@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using theaterlaak.Data;
 using theaterlaak.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace theaterlaak.Controllers
 {

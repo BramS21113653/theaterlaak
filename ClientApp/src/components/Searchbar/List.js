@@ -1,4 +1,6 @@
 import { React, useState, useEffect } from 'react'
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import Betaling from "../Betaling";
 // import Programmering from "./ListData"
 
 export const Programmering = () => {
@@ -26,6 +28,12 @@ export const Programmering = () => {
   }
 
 function List(props) {
+    const navigate = useNavigate();
+
+    const NavigateToBetaling = () => {
+        // 👇️ navigate to /contacts
+        navigate('/betaling');
+    };
     //create a new array by filtering the original array
     console.log(Programmering());
     const filteredData = Programmering().filter((el) => {
@@ -47,11 +55,18 @@ function List(props) {
                 Zaal {gelegenheid.zaalId}<br></br>
                 Aanvangstijd {gelegenheid.aanvangstijd}<br></br>
                 Eindtijd {gelegenheid.eindtijd}<br></br>
-                <button>Boek ticket</button>
+                <button onClick={NavigateToBetaling}>Boek ticket</button>
                 </div>
               ))}
+              <Routes>
+                <Route 
+                path="/betaling" 
+                // require auth
+                element={<Betaling />} 
+                />
+              </Routes>
         </ul>
     )
 }
 
-export default List
+export default List;

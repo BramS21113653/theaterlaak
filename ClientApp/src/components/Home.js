@@ -1,15 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './Home.css';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { Programmering } from './Programmering';
 
 export const Home = (props) => {
+  const [item, setItems] = useState([]);
   const navigate = useNavigate();
 
   const NavigateToProgrammering = () => {
       // 👇️ navigate to /contacts
       navigate('/programmering');
   };
+
+  useEffect(() => {
+    const requestOptions = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }};
+    fetch("https://localhost:7003/api/applicationuser/current", requestOptions)
+      .then(
+        (result) => {
+          setItems(result);
+        })
+  }, [])
 
   return (
       <div>

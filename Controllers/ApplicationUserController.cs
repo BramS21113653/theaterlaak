@@ -1,12 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using theaterlaak.Data;
 using theaterlaak.Models;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace theaterlaak.Controllers
 {
@@ -16,10 +25,14 @@ namespace theaterlaak.Controllers
     {
 
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ApplicationUserController(ApplicationDbContext context)
+        public ApplicationUserController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _userManager = userManager;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet("{id}")]
@@ -35,8 +48,6 @@ namespace theaterlaak.Controllers
             return applicationUser;
         }
 
-
-        // [Authorize(Roles = "ACTEUR")]
         [HttpPut]
         public async Task<ActionResult<ApplicationUser>> UpdateApplicationUser(ApplicationUser applicationUser)
         {
@@ -64,5 +75,15 @@ namespace theaterlaak.Controllers
                         "Error updating data");
                 }
         }
-    }
+
+        [HttpGet("current")]
+        public async Task<ActionResult<ApplicationUser>> GetCurrentUserIdAsync()
+        {
+            ApplicationUser usr = await GetCurrentUserAsync();
+            // string userId = await _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;        
+            return usr;
+        }
+
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
+        }
 }
