@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {useState, useEffect} from 'react';
+import { Searchbar } from './Searchbar/Searchbar';
 
 export const Programmering = () => {
   const [data, setData] = useState([]);
-
   useEffect(() => {
     // fetch data
     const dataFetch = async () => {
@@ -22,8 +22,9 @@ export const Programmering = () => {
 
   return (
     <div>
+      <Searchbar/>
       {data.map(gelegenheid => (
-        <div key={gelegenheid.gelegenheidId}><br></br>
+        <div key={gelegenheid.voorstelling.titel}><br></br>
         Voorstelling {gelegenheid.voorstelling.titel}<br></br>
         Zaal {gelegenheid.zaalId}<br></br>
         Aanvangstijd {gelegenheid.aanvangstijd}<br></br>

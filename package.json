@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@mui/material": "^5.11.6",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
